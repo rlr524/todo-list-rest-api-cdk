@@ -7,9 +7,9 @@ export class Config {
 	private appFuncName: string;
 
 	private defaults = {
-		appFuncRoleName: "add-role",
-		appFuncRoleDesc: "Role for addition Function",
-		appFuncName: "add",
+		appFuncRoleName: "app-role",
+		appFuncRoleDesc: "Role for app Function",
+		appFuncName: "app",
 	};
 
 	constructor() {
@@ -19,13 +19,13 @@ export class Config {
 			process.env.CDK_DEPLOY_REGION || process.env.CDK_DEFAULT_REGION;
 
 		this.appFuncRoleName =
-			process.env.ADDITION_FUNC_ROLE_NAME ||
+			process.env.APP_FUNC_ROLE_NAME ||
 			this.defaults.appFuncRoleName;
 		this.appFuncRoleDesc =
-			process.env.ADDITION_FUNC_ROLE_DESC ||
+			process.env.APP_FUNC_ROLE_DESC ||
 			this.defaults.appFuncRoleDesc;
 		this.appFuncName =
-			process.env.ADDITION_FUNC_NAME || this.defaults.appFuncName;
+			process.env.APP_FUNC_NAME || this.defaults.appFuncName;
 	}
 
 	getAccount(): string | undefined {

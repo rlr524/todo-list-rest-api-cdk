@@ -22,7 +22,7 @@ export class TodoListRestApiCdkStack extends cdk.Stack {
 	private addAppFunction(config: Config) {
 		const lambdaProps: LambdaProps = {
 			handler: "index.handler",
-			assetsPath: "src/lib",
+			assetsPath: "lib",
 			functionName: config.getappFuncName(),
 			functionRoleDesc: config.getappFuncRoleDesc(),
 			functionRoleName: config.getappFuncRoleName(),
